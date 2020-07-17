@@ -1,4 +1,4 @@
-package strategya
+package strategyc
 
 //CashSuper 现金收费接口
 type CashSuper interface {
@@ -50,4 +50,33 @@ func (re *CashReturn) AcceptCash(money float64) float64 {
 		money -= re.moneyReturn
 	}
 	return money
+}
+
+//CashContext 收费策略
+type CashContext struct {
+	cs CashSuper
+}
+
+//NewCashContext CashContext构造函数
+func NewCashContext(strType string) *CashContext {
+	var cs CashSuper
+	switch strType {
+	case "正常收费":
+		cs = &CashNormal{}
+		break
+	case "满300返100":
+		cs = NewCashReturn(300, 100)
+		break
+	case "打八折":
+		cs = NewCashRebate(0.8)
+		break
+	}
+	return &CashContext{
+		cs: cs,
+	}
+}
+
+//GetResult 得到现金促销计算结果（不同的策略行为导致不同的结果）
+func (context *CashContext) GetResult(money float64) float64 {
+	return context.cs.AcceptCash(money)
 }
