@@ -3,38 +3,41 @@ package decoratord
 import "fmt"
 
 //Person 人
-type Person struct {
+type Person interface {
+	Show()
+}
+
+//ConcretePerson 具体的人
+type ConcretePerson struct {
 	name string
 }
 
-//NewPerson Person构造函数
-func NewPerson(name string) *Person {
-	return &Person{
+//NewConcretePerson ConcretePerson构造函数
+func NewConcretePerson(name string) *ConcretePerson {
+	return &ConcretePerson{
 		name: name,
 	}
 }
 
 //Show 显示人名
-func (person *Person) Show() {
-	fmt.Printf("装扮的%s\n", person.name)
+func (c *ConcretePerson) Show() {
+	fmt.Printf("装扮的%s\n", c.name)
 }
 
 //Finery 服饰
 type Finery struct {
-	component Person
+	Person
 }
 
-//NewFinery Finery构造函数
-func NewFinery(component Person) *Finery {
-	return &Finery{
-		component: component,
-	}
+//Decorate 服饰装饰器
+func (f *Finery) Decorate(component Person) {
+	f.Person = component
 }
 
 //Show 服饰展示
 func (f *Finery) Show() {
-	if f.component != nil {
-		f.component.Show()
+	if f.Person != nil {
+		f.Person.Show()
 	}
 }
 
