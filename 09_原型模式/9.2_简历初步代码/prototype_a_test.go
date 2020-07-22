@@ -5,13 +5,8 @@ func ExamplePrototype_a() {
 	a.SetPersonalInfo("男", "29")
 	a.SetWorkExperience("1998-2000", "XX公司")
 
-	b := &Resume{name: "大鸟"}
-	b.SetPersonalInfo("男", "29")
-	b.SetWorkExperience("1998-2000", "XX公司")
-
-	c := &Resume{name: "大鸟"}
-	c.SetPersonalInfo("男", "29")
-	c.SetWorkExperience("1998-2000", "XX公司")
+	b := a
+	c := a
 
 	a.Display()
 	b.Display()
