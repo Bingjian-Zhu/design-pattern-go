@@ -8,44 +8,34 @@ type ICommand interface {
 	ExcuteCommand()
 }
 
-type Command struct {
-	receiver *Barbecuer
-}
-
-func NewCommand(receiver *Barbecuer) *Command {
-	return &Command{
-		receiver: receiver,
-	}
-}
-
 //BakeMuttonCommand 烤羊肉串命令
 type BakeMuttonCommand struct {
-	*Command
+	receiver *Barbecuer
 }
 
 func NewBakeMuttonCommand(c *Barbecuer) *BakeMuttonCommand {
 	return &BakeMuttonCommand{
-		Command: NewCommand(c),
+		receiver: c,
 	}
 }
 
 func (b *BakeMuttonCommand) ExcuteCommand() {
-	b.Command.receiver.BakeMutton()
+	b.receiver.BakeMutton()
 }
 
 //BakeChickenWingCommand 烤鸡翅命令
 type BakeChickenWingCommand struct {
-	*Command
+	receiver *Barbecuer
 }
 
 func NewBakeChickenWingCommand(c *Barbecuer) *BakeChickenWingCommand {
 	return &BakeChickenWingCommand{
-		Command: NewCommand(c),
+		receiver: c,
 	}
 }
 
 func (b *BakeChickenWingCommand) ExcuteCommand() {
-	b.Command.receiver.BakeChickenWing()
+	b.receiver.BakeChickenWing()
 }
 
 //Barbecuer 烤肉串者
