@@ -1,4 +1,4 @@
-### 单一职责原则（SRP：Single responsibility principle）
+### 单一职责原则（Single responsibility principle）
 它规定一个类应该只有一个发生变化的原因。
 
 
