@@ -3,7 +3,7 @@ package strategy
 import "testing"
 
 func TestStrategy(t *testing.T) {
-	factory := &CashFactory{}
+	factory := new(CashFactory)
 	var cs CashSuper
 	cs = factory.CreateCashAccept("正常收费")
 	res := cs.AcceptCash(300)
