@@ -1,4 +1,4 @@
-### 开放封闭原则（OCP，Open Closed Principle）
+### 开放封闭原则（Open Closed Principle）
 
 定义：软件实体（类、模块、函数）等应该是可以扩展的，但是不可修改。 
 
