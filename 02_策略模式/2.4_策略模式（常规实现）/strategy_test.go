@@ -2,11 +2,11 @@ package strategy
 
 func ExampleStrategy() {
 	var context *Context
-	context = NewContext(&ConcreteStrategyA{})
+	context = NewContext(new(ConcreteStrategyA))
 	context.ContextInterface()
-	context = NewContext(&ConcreteStrategyB{})
+	context = NewContext(new(ConcreteStrategyB))
 	context.ContextInterface()
-	context = NewContext(&ConcreteStrategyC{})
+	context = NewContext(new(ConcreteStrategyC))
 	context.ContextInterface()
 	// Output:
 	// 算法A实现
