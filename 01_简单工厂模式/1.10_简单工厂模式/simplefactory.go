@@ -12,16 +12,16 @@ func NewOperation(operate string) Operation {
 	var oper Operation
 	switch operate {
 	case "+":
-		oper = &OperationAdd{}
+		oper = new(OperationAdd)
 		break
 	case "-":
-		oper = &OperationSub{}
+		oper = new(OperationSub)
 		break
 	case "*":
-		oper = &OperationMul{}
+		oper = new(OperationMul)
 		break
 	case "/":
-		oper = &OperationDiv{}
+		oper = new(OperationDiv)
 		break
 	}
 	return oper
