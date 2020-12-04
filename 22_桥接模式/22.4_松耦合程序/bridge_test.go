@@ -2,16 +2,16 @@ package bridge
 
 func ExampleBridge() {
 	var ab HandsetSoft
-	ab = &HandsetBrandMGame{}
+	ab = new(HandsetBrandMGame)
 	ab.Run()
 
-	ab = &HandsetBrandNGame{}
+	ab = new(HandsetBrandNGame)
 	ab.Run()
 
-	ab = &HandsetBrandMAddressList{}
+	ab = new(HandsetBrandMAddressList)
 	ab.Run()
 
-	ab = &HandsetBrandNAddressList{}
+	ab = new(HandsetBrandNAddressList)
 	ab.Run()
 
 	// 	OutPut:

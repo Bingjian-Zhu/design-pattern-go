@@ -2,12 +2,12 @@ package memento
 
 func ExampleMemento() {
 	//大战Boss前
-	lixiaoyao := &GameRole{}
+	lixiaoyao := new(GameRole)
 	lixiaoyao.GetInitState()
 	lixiaoyao.StateDisplay()
 
 	//保存进度
-	stateAdmin := &RoleStateCaretaker{}
+	stateAdmin := new(RoleStateCaretaker)
 	stateAdmin.Memento = lixiaoyao.SaveState()
 
 	//大战Boss时，损耗严重

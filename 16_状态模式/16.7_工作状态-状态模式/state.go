@@ -16,7 +16,7 @@ func (*ForenoonState) WriteProgram(w *Work) {
 	if w.Hour < 12 {
 		fmt.Printf("当前时间：%g点 上午工作，精神百倍\n", w.Hour)
 	} else {
-		w.SetState(&NoonState{})
+		w.SetState(new(NoonState))
 		w.WriteProgram()
 	}
 }
@@ -30,7 +30,7 @@ func (*NoonState) WriteProgram(w *Work) {
 	if w.Hour < 13 {
 		fmt.Printf("当前时间：%g点 饿了，午饭；犯困，午休。\n", w.Hour)
 	} else {
-		w.SetState(&AfternoonState{})
+		w.SetState(new(AfternoonState))
 		w.WriteProgram()
 	}
 }
@@ -44,7 +44,7 @@ func (*AfternoonState) WriteProgram(w *Work) {
 	if w.Hour < 17 {
 		fmt.Printf("当前时间：%g点 下午状态还不错，继续努力\n", w.Hour)
 	} else {
-		w.SetState(&EveningState{})
+		w.SetState(new(EveningState))
 		w.WriteProgram()
 	}
 }
@@ -56,13 +56,13 @@ type EveningState struct {
 //WriteProgram 工作状态
 func (*EveningState) WriteProgram(w *Work) {
 	if w.TaskFinished {
-		w.SetState(&RestState{})
+		w.SetState(new(RestState))
 		w.WriteProgram()
 	} else {
 		if w.Hour < 21 {
 			fmt.Printf("当前时间：%g点 加班哦，疲累之极\n", w.Hour)
 		} else {
-			w.SetState(&SleepingState{})
+			w.SetState(new(SleepingState))
 			w.WriteProgram()
 		}
 	}
@@ -96,7 +96,7 @@ type Work struct {
 // NewWork 构造函数
 func NewWork() *Work {
 	return &Work{
-		current: &ForenoonState{},
+		current: new(ForenoonState),
 	}
 }
 

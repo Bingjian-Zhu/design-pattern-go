@@ -1,9 +1,9 @@
 package command
 
 func ExampleCommand() {
-	r := &Receiver{}
+	r := new(Receiver)
 	c := NewConcreteCommand(r)
-	i := &Invoker{}
+	i := new(Invoker)
 
 	// Set and execute command
 	i.SetCommand(c)

@@ -17,5 +17,5 @@ func (*SqlserverUser) Insert(user *model.User) {
 //GetUser 获取用户
 func (*SqlserverUser) GetUser(id int) *model.User {
 	fmt.Println("在Sqlserver中根据ID得到User表一条记录")
-	return &model.User{}
+	return new(model.User)
 }

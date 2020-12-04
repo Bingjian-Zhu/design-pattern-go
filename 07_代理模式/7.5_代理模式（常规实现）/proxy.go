@@ -24,7 +24,7 @@ type Proxy struct {
 //Request 代理请求
 func (p *Proxy) Request() {
 	if p.realSubject == nil {
-		p.realSubject = &RealSubject{}
+		p.realSubject = new(RealSubject)
 	}
 	p.realSubject.Request()
 }

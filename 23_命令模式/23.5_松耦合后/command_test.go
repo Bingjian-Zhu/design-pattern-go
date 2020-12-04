@@ -2,11 +2,11 @@ package command
 
 func ExampleCommand() {
 	//开店前的准备
-	boy := &Barbecuer{}
+	boy := new(Barbecuer)
 	bakeMuttonCommand1 := NewBakeMuttonCommand(boy)
 	bakeMuttonCommand2 := NewBakeMuttonCommand(boy)
 	bakeChickenWingCommand1 := NewBakeChickenWingCommand(boy)
-	girl := &Waiter{}
+	girl := new(Waiter)
 
 	//开门营业
 	girl.SetOrder(bakeMuttonCommand1)

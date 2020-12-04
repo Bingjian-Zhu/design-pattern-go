@@ -1,11 +1,11 @@
 package memento
 
 func ExampleMemento() {
-	o := &Originator{}
+	o := new(Originator)
 	o.State = "On"
 	o.Show()
 
-	c := &Caretaker{}
+	c := new(Caretaker)
 	c.Memento = o.CreateMemento()
 
 	o.State = "Off"

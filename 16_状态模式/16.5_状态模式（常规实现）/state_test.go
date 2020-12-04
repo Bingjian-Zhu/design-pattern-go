@@ -1,7 +1,7 @@
 package state
 
 func ExampleState() {
-	c := NewContext(&ConcreteStateA{})
+	c := NewContext(new(ConcreteStateA))
 	c.Request()
 	c.Request()
 	c.Request()

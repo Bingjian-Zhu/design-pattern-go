@@ -1,7 +1,7 @@
 package mediator
 
 func ExampleMediator() {
-	m := &ConcreteMediator{}
+	m := new(ConcreteMediator)
 
 	c1 := NewConcreteColleague1(m)
 	c2 := NewConcreteColleague2(m)

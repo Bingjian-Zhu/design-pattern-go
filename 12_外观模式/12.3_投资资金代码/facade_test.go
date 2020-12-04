@@ -1,7 +1,7 @@
 package facade
 
 func ExampleFacade() {
-	jijin := &Fund{}
+	jijin := new(Fund)
 
 	jijin.BuyFund()
 	jijin.SellFund()

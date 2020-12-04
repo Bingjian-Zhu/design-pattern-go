@@ -14,7 +14,7 @@ type Adaptee interface {
 
 //NewAdaptee 是被适配接口的工厂函数
 func NewAdaptee() Adaptee {
-	return &adapteeImpl{}
+	return new(adapteeImpl)
 }
 
 //AdapteeImpl 是被适配的目标类

@@ -35,9 +35,9 @@ func NewFlyweightFactory() *FlyweightFactory {
 	f := &FlyweightFactory{
 		flyweights: make(map[string]*ConcreteFlyweight),
 	}
-	f.flyweights["x"] = &ConcreteFlyweight{}
-	f.flyweights["y"] = &ConcreteFlyweight{}
-	f.flyweights["z"] = &ConcreteFlyweight{}
+	f.flyweights["x"] = new(ConcreteFlyweight)
+	f.flyweights["y"] = new(ConcreteFlyweight)
+	f.flyweights["z"] = new(ConcreteFlyweight)
 	return f
 }
 

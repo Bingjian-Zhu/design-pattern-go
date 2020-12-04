@@ -2,7 +2,7 @@ package obserser
 
 func ExampleObserser() {
 	//前台小姐童子喆
-	tongzizhe := &Secretary{}
+	tongzizhe := new(Secretary)
 	//看股票的同事
 	tongshi1 := NewStockObserver("魏关姹", tongzizhe)
 	//看NBA的同事
@@ -17,7 +17,7 @@ func ExampleObserser() {
 	tongzizhe.Notify()
 
 	//老板胡汉三
-	boos := &Boss{}
+	boos := new(Boss)
 	//看股票的同事
 	tongshi1 = NewStockObserver("魏关姹", boos)
 	//看NBA的同事

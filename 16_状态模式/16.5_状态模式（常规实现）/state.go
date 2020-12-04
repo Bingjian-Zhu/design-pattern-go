@@ -16,7 +16,7 @@ type ConcreteStateA struct {
 
 //Handle 处理状态
 func (*ConcreteStateA) Handle(context *Context) {
-	context.SetState(&ConcreteStateB{})
+	context.SetState(new(ConcreteStateB))
 }
 
 //ConcreteStateB 具体状态B
@@ -25,7 +25,7 @@ type ConcreteStateB struct {
 
 //Handle 处理状态
 func (*ConcreteStateB) Handle(context *Context) {
-	context.SetState(&ConcreteStateA{})
+	context.SetState(new(ConcreteStateA))
 }
 
 type Context struct {

@@ -1,12 +1,12 @@
 package visitor
 
 func ExampleVisitor() {
-	o := &ObjectStructure{}
-	o.Attach(&ConcreteElementA{})
-	o.Attach(&ConcreteElementB{})
+	o := new(ObjectStructure)
+	o.Attach(new(ConcreteElementA))
+	o.Attach(new(ConcreteElementB))
 
-	v1 := &ConcreteVisitor1{}
-	v2 := &ConcreteVisitor2{}
+	v1 := new(ConcreteVisitor1)
+	v2 := new(ConcreteVisitor2)
 
 	o.Accept(v1)
 	o.Accept(v2)

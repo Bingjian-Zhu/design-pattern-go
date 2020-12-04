@@ -1,20 +1,20 @@
 package visitor
 
 func ExampleVisitor() {
-	o := &ObjectStructure{}
-	o.Attach(&Man{})
-	o.Attach(&Woman{})
+	o := new(ObjectStructure)
+	o.Attach(new(Man))
+	o.Attach(new(Woman))
 
-	v1 := &Success{}
+	v1 := new(Success)
 	o.Display(v1)
 
-	v2 := &Failing{}
+	v2 := new(Failing)
 	o.Display(v2)
 
-	v3 := &Amativeness{}
+	v3 := new(Amativeness)
 	o.Display(v3)
 
-	v4 := &Marriage{}
+	v4 := new(Marriage)
 	o.Display(v4)
 
 	// OutPut:

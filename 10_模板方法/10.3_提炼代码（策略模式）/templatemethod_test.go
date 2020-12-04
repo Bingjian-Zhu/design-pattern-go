@@ -4,13 +4,13 @@ import "fmt"
 
 func ExampleTemplatemethod() {
 	fmt.Println("学生甲抄的试卷：")
-	studentA := NewTestPaper(&TestPaperA{})
+	studentA := NewTestPaper(new(TestPaperA))
 	studentA.TestQuestion1()
 	studentA.TestQuestion2()
 	studentA.TestQuestion3()
 
 	fmt.Println("学生乙抄的试卷：")
-	studentB := NewTestPaper(&TestPaperB{})
+	studentB := NewTestPaper(new(TestPaperB))
 	studentB.TestQuestion1()
 	studentB.TestQuestion2()
 	studentB.TestQuestion3()

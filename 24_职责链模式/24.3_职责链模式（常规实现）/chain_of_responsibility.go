@@ -30,7 +30,7 @@ type ConcreteHandler1 struct {
 
 func NewConcreteHandler1() *Handler {
 	return &Handler{
-		IHandler: &ConcreteHandler1{},
+		IHandler: new(ConcreteHandler1),
 	}
 }
 
@@ -45,7 +45,7 @@ type ConcreteHandler2 struct {
 
 func NewConcreteHandler2() *Handler {
 	return &Handler{
-		IHandler: &ConcreteHandler2{},
+		IHandler: new(ConcreteHandler2),
 	}
 }
 
@@ -60,7 +60,7 @@ type ConcreteHandler3 struct {
 
 func NewConcreteHandler3() *Handler {
 	return &Handler{
-		IHandler: &ConcreteHandler3{},
+		IHandler: new(ConcreteHandler3),
 	}
 }
 

@@ -1,7 +1,7 @@
 package builder
 
 func ExampleBuild() {
-	director := &Director{}
+	director := new(Director)
 
 	b1 := NewConcreteBuilder1()
 	director.Construct(b1)

@@ -1,12 +1,12 @@
 package bridge
 
 func ExampleBridge() {
-	ab := &RefinedAbstraction{}
+	ab := new(RefinedAbstraction)
 
-	ab.SetImplementor(&ConcreteImplementorA{})
+	ab.SetImplementor(new(ConcreteImplementorA))
 	ab.Operation()
 
-	ab.SetImplementor(&ConcreteImplementorB{})
+	ab.SetImplementor(new(ConcreteImplementorB))
 	ab.Operation()
 
 	// OutPut:

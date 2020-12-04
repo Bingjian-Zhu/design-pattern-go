@@ -24,7 +24,7 @@ type WebSiteFactory struct {
 
 //GetWebSiteCategory 获得网站分类
 func (w *WebSiteFactory) GetWebSiteCategory(key string) WebSite {
-	c := &ConcreteWebSite{}
+	c := new(ConcreteWebSite)
 	c.Name = key
 	w.flyweights[key] = c
 	return WebSite(w.flyweights[key])

@@ -1,11 +1,11 @@
 package facade
 
 func ExampleFacade() {
-	gu1 := &Stock1{}
-	gu2 := &Stock2{}
-	gu3 := &Stock3{}
-	nd1 := &NationalDebt1{}
-	rt1 := &Realty1{}
+	gu1 := new(Stock1)
+	gu2 := new(Stock2)
+	gu3 := new(Stock3)
+	nd1 := new(NationalDebt1)
+	rt1 := new(Realty1)
 
 	gu1.Buy()
 	gu2.Buy()

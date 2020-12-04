@@ -7,7 +7,7 @@ func TestStrategy(t *testing.T) {
 	strType := "打八折"
 	switch strType {
 	case "正常收费":
-		cc = NewCashContext(&CashNormal{})
+		cc = NewCashContext(new(CashNormal))
 		break
 	case "满300返100":
 		cc = NewCashContext(NewCashReturn(300, 100))

@@ -35,7 +35,7 @@ type ConcreteBuilder1 struct {
 //NewConcreteBuilder1 ConcreteBuilder1构造函数
 func NewConcreteBuilder1() *ConcreteBuilder1 {
 	return &ConcreteBuilder1{
-		product: &Product{},
+		product: new(Product),
 	}
 }
 
@@ -62,7 +62,7 @@ type ConcreteBuilder2 struct {
 //NewConcreteBuilder2 ConcreteBuilder2构造函数
 func NewConcreteBuilder2() *ConcreteBuilder2 {
 	return &ConcreteBuilder2{
-		product: &Product{},
+		product: new(Product),
 	}
 }
 

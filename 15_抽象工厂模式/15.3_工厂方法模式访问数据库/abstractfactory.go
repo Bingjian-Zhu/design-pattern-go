@@ -23,7 +23,7 @@ func (*SqlserverUser) Insert(user *model.User) {
 //GetUser 获取用户
 func (*SqlserverUser) GetUser(id int) *model.User {
 	fmt.Println("在Sqlserver中根据ID得到User表一条记录")
-	return &model.User{}
+	return new(model.User)
 }
 
 //AccessUser Access
@@ -38,7 +38,7 @@ func (*AccessUser) Insert(user *model.User) {
 //GetUser 获取用户
 func (*AccessUser) GetUser(id int) *model.User {
 	fmt.Println("在Access中根据ID得到User表一条记录")
-	return &model.User{}
+	return new(model.User)
 }
 
 //IFactory IUser工厂接口
@@ -50,12 +50,12 @@ type SqlserverFactory struct {
 }
 
 func (*SqlserverFactory) CreateUser() IUser {
-	return &SqlserverUser{}
+	return new(SqlserverUser)
 }
 
 type AccessFactory struct {
 }
 
 func (*AccessFactory) CreateUser() IUser {
-	return &AccessUser{}
+	return new(AccessUser)
 }

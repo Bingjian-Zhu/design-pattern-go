@@ -49,10 +49,10 @@ type Facade struct {
 //NewFacade 构造函数
 func NewFacade() *Facade {
 	return &Facade{
-		one:   &SubSystemOne{},
-		two:   &SubSystemTwo{},
-		three: &SubSystemThree{},
-		four:  &SubSystemFour{},
+		one:   new(SubSystemOne),
+		two:   new(SubSystemTwo),
+		three: new(SubSystemThree),
+		four:  new(SubSystemFour),
 	}
 }
 

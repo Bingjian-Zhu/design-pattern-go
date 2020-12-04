@@ -53,7 +53,7 @@ type TestPaperA struct {
 
 //NewTestPaperA TestPaperA构造函数
 func NewTestPaperA() ITestQuestion {
-	paperA := &TestPaperA{}
+	paperA := new(TestPaperA)
 	testPaper := NewTestPaper(paperA)
 	paperA.TestPaper = testPaper
 	return paperA
@@ -81,7 +81,7 @@ type TestPaperB struct {
 
 //NewTestPaperB TestPaperB构造函数
 func NewTestPaperB() ITestQuestion {
-	paperB := &TestPaperB{}
+	paperB := new(TestPaperB)
 	testPaper := NewTestPaper(paperB)
 	paperB.TestPaper = testPaper
 	return paperB

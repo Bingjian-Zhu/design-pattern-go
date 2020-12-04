@@ -1,9 +1,9 @@
 package decorator
 
 func ExampleDecorator() {
-	c := &ConcreteComponent{}
-	d1 := &ConcreteDecoratorA{}
-	d2 := &ConcreteDecoratorB{}
+	c := new(ConcreteComponent)
+	d1 := new(ConcreteDecoratorA)
+	d2 := new(ConcreteDecoratorB)
 
 	d1.Component = c
 	d2.Component = d1

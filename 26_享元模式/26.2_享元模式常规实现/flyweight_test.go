@@ -17,7 +17,7 @@ func ExampleFlyweight() {
 	extrinsicstate--
 	fz.Operation(extrinsicstate)
 
-	uf := &UnsharedConcreteFlyweight{}
+	uf := new(UnsharedConcreteFlyweight)
 	extrinsicstate--
 	uf.Operation(extrinsicstate)
 

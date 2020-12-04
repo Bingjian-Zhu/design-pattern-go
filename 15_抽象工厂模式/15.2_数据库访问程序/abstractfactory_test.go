@@ -3,9 +3,9 @@ package abstractfactory
 import "design-pattern-go/15_抽象工厂模式/model"
 
 func ExampleAbstractfactory() {
-	user := &model.User{}
+	user := new(model.User)
 
-	su := &SqlserverUser{}
+	su := new(SqlserverUser)
 	su.Insert(user)
 	su.GetUser(1)
 

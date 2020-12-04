@@ -2,12 +2,12 @@ package memento
 
 func ExampleMemento() {
 	//大战Boss前
-	lixiaoyao := &GameRole{}
+	lixiaoyao := new(GameRole)
 	lixiaoyao.GetInitState()
 	lixiaoyao.StateDisplay()
 
 	//保存进度
-	backup := &GameRole{}
+	backup := new(GameRole)
 	backup.Vitality = lixiaoyao.Vitality
 	backup.Attack = lixiaoyao.Attack
 	backup.Defense = lixiaoyao.Defense

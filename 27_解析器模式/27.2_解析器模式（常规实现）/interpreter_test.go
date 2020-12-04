@@ -1,12 +1,12 @@
 package interpreter
 
 func ExampleInterpreter() {
-	context := &Context{}
+	context := new(Context)
 	list := make([]AbstractExpression, 0, 4)
-	list = append(list, &TerminalExpression{})
-	list = append(list, &NonterminalExpression{})
-	list = append(list, &TerminalExpression{})
-	list = append(list, &TerminalExpression{})
+	list = append(list, new(TerminalExpression))
+	list = append(list, new(NonterminalExpression))
+	list = append(list, new(TerminalExpression))
+	list = append(list, new(TerminalExpression))
 
 	for _, exp := range list {
 		exp.Interpret(context)

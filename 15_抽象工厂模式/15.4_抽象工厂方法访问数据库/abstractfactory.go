@@ -23,7 +23,7 @@ func (*SqlserverUser) Insert(user *model.User) {
 //GetUser 获取用户
 func (*SqlserverUser) GetUser(id int) *model.User {
 	fmt.Println("在Sqlserver中根据ID得到User表一条记录")
-	return &model.User{}
+	return new(model.User)
 }
 
 //AccessUser Access
@@ -38,7 +38,7 @@ func (*AccessUser) Insert(user *model.User) {
 //GetUser 获取用户
 func (*AccessUser) GetUser(id int) *model.User {
 	fmt.Println("在Access中根据ID得到User表一条记录")
-	return &model.User{}
+	return new(model.User)
 }
 
 //IDepartment 部门接口
@@ -59,7 +59,7 @@ func (*SqlserverDepartment) Insert(user *model.Department) {
 //GetDepartment 获取部门
 func (*SqlserverDepartment) GetDepartment(id int) *model.Department {
 	fmt.Println("在Sqlserver中根据ID得到Department表一条记录")
-	return &model.Department{}
+	return new(model.Department)
 }
 
 //AccessDepartment Access
@@ -74,7 +74,7 @@ func (*AccessDepartment) Insert(user *model.Department) {
 //GetDepartment 获取部门
 func (*AccessDepartment) GetDepartment(id int) *model.Department {
 	fmt.Println("在Access中根据ID得到Department表一条记录")
-	return &model.Department{}
+	return new(model.Department)
 }
 
 //IFactory IUser工厂接口
@@ -87,20 +87,20 @@ type SqlserverFactory struct {
 }
 
 func (*SqlserverFactory) CreateUser() IUser {
-	return &SqlserverUser{}
+	return new(SqlserverUser)
 }
 
 func (*SqlserverFactory) CreateDepartment() IDepartment {
-	return &SqlserverDepartment{}
+	return new(SqlserverDepartment)
 }
 
 type AccessFactory struct {
 }
 
 func (*AccessFactory) CreateUser() IUser {
-	return &AccessUser{}
+	return new(AccessUser)
 }
 
 func (*AccessFactory) CreateDepartment() IDepartment {
-	return &AccessDepartment{}
+	return new(AccessDepartment)
 }

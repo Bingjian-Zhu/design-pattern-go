@@ -1,11 +1,11 @@
 package adapter
 
 func ExampleAdapter() {
-	b := &Forwards{}
+	b := new(Forwards)
 	b.Name = "巴蒂尔"
 	b.Attack()
 
-	m := &Guards{}
+	m := new(Guards)
 	m.Name = "麦克格雷迪"
 	m.Attack()
 

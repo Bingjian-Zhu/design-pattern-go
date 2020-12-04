@@ -6,9 +6,9 @@ func ExampleDecorator() {
 	xc := NewConcretePerson("小菜")
 	fmt.Println("\n第一种装扮：")
 
-	pqx := &Sneakers{}
-	kk := &BigTrouser{}
-	dtx := &TShirts{}
+	pqx := new(Sneakers)
+	kk := new(BigTrouser)
+	dtx := new(TShirts)
 
 	pqx.Person = xc
 	kk.Person = pqx
@@ -17,9 +17,9 @@ func ExampleDecorator() {
 
 	fmt.Println("\n第二种装扮：")
 
-	px := &LeatherShoes{}
-	ld := &Tie{}
-	xz := &Suit{}
+	px := new(LeatherShoes)
+	ld := new(Tie)
+	xz := new(Suit)
 
 	px.Person = xc
 	ld.Person = px

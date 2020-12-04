@@ -15,6 +15,7 @@ func (s *Secretary) Attach(stockObserver *StockObserver) {
 
 //Detach 移除
 func (s *Secretary) Detach(stockObserver *StockObserver) {
+//	s.observers.Remove(stockObserver)
 	for index, val := range s.observers {
 		if val == stockObserver {
 			s.observers = append(s.observers[:index], s.observers[index+1:]...)

@@ -57,7 +57,7 @@ type AddFactory struct {
 
 //CreateOperation 创建+法实例
 func (*AddFactory) CreateOperation() Operation {
-	return &OperationAdd{}
+	return new(OperationAdd)
 }
 
 //SubFactory 专门负责生产“-”的工厂
@@ -66,7 +66,7 @@ type SubFactory struct {
 
 //CreateOperation 创建-法实例
 func (*SubFactory) CreateOperation() Operation {
-	return &OperationSub{}
+	return new(OperationSub)
 }
 
 //MulFactory 专门负责生产“*”的工厂
@@ -75,7 +75,7 @@ type MulFactory struct {
 
 //CreateOperation 创建*法实例
 func (*MulFactory) CreateOperation() Operation {
-	return &OperationMul{}
+	return new(OperationMul)
 }
 
 //DivFactory 专门负责生产“/”的工厂
@@ -84,5 +84,5 @@ type DivFactory struct {
 
 //CreateOperation 创建*法实例
 func (*DivFactory) CreateOperation() Operation {
-	return &OperationDiv{}
+	return new(OperationDiv)
 }

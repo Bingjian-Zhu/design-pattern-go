@@ -62,7 +62,7 @@ func NewCashContext(strType string) *CashContext {
 	var cs CashSuper
 	switch strType {
 	case "正常收费":
-		cs = &CashNormal{}
+		cs = new(CashNormal)
 		break
 	case "满300返100":
 		cs = NewCashReturn(300, 100)

@@ -1,7 +1,7 @@
 package mediator
 
 func ExampleMediator() {
-	UNSC := &UnitedNationsSecurityCouncil{}
+	UNSC := new(UnitedNationsSecurityCouncil)
 
 	c1 := NewUSA(UNSC)
 	c2 := NewIraq(UNSC)
